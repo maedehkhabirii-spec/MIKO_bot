@@ -8,9 +8,7 @@ aiogram==3.15.0
 # ============================================================================
 # Media Downloading Engine & Plugins
 # ============================================================================
-yt-dlp>=2026.1.1,<2027.0.0
-    # Core engine for video/audio extraction (keep updated regularly)
-
+yt-dlp
 bgutil-ytdlp-pot-provider>=0.4.0
     # Plugin to generate PO Tokens and bypass YouTube bot detection
 
