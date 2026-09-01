@@ -1,4 +1,39 @@
-   aiogram>=3.3.0
-   yt-dlp
-   aiohttp
-   python-dotenv
+# ============================================================================
+# Core Bot Framework (Telegram Async API)
+# ============================================================================
+aiogram==3.15.0
+    # via main project
+    # requires: magic-filter, pydantic, aiohttp
+
+# ============================================================================
+# Media Downloading Engine & Plugins
+# ============================================================================
+yt-dlp>=2026.1.1,<2027.0.0
+    # Core engine for video/audio extraction (keep updated regularly)
+
+bgutil-ytdlp-pot-provider>=0.4.0
+    # Plugin to generate PO Tokens and bypass YouTube bot detection
+
+# ============================================================================
+# Web Server, Async I/O & Networking
+# ============================================================================
+aiohttp>=3.9.0,<4.0.0
+    # Used for Webhook/Ping server and async network calls
+
+certifi>=2024.2.2
+    # Ensures up-to-date SSL certificates for secure requests
+
+# ============================================================================
+# Services & Utilities
+# ============================================================================
+python-dotenv==1.0.1
+    # Environment variable parser
+
+spotipy>=2.24.0,<3.0.0
+    # Spotify Web API client
+
+# ============================================================================
+# Build & Performance Optimization
+# ============================================================================
+setuptools>=69.0.0
+wheel>=0.42.0
