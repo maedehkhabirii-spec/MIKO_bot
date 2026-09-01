@@ -217,19 +217,25 @@ async def cleanup_files(file_paths: List[str]):
         except Exception as e:
             logger.error(f"❌ خطا در پاکسازی فایل {path}: {e}")
 
-def get_youtube_opts() -> Dict:
+ def get_youtube_opts() -> Dict:
     return {
         'extractor_args': {
             'youtube': {
-                'player_client': ['web', 'mweb', 'android', 'tv'],
+                'player_client': ['android', 'ios', 'web', 'mweb'],
                 'player_skip': ['webpage', 'configs'],
+                'po_token': ['web+1'],  # تلاش برای دور زدن توکن BOT
             }
         },
         'http_headers': {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.9',
+            'Sec-Fetch-Mode': 'navigate',
         },
+        'sleep_interval': 1,      # تاخیر کوتاه برای جلوگیری از مسدودی IP سرور
+        'max_sleep_interval': 3,
     }
+}
 
 def get_base_opts(download_dir: str) -> Dict:
     opts = {
